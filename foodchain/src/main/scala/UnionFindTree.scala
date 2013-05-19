@@ -1,8 +1,8 @@
 package com.example.foodchain
 
-class UnionFindTree(elementNum: Int) {
-  var parent: Array[Int] = Array.range(0, elementNum)
-  var rank: Array[Int] = Array.fill(elementNum)(0)
+class UnionFindTree(numOfElements: Int) {
+  var parent: Array[Int] = Array.range(0, numOfElements - 1)
+  var rank: Array[Int] = Array.fill(numOfElements)(0)
 
   // 根を見つける
   def find(x: Int): Int = {

@@ -7,6 +7,10 @@
  */
 package com.example.foodchain
 
-case class Information(lifeType: LifeType) {
+import com.example.foodchain.LifeType.LifeType
+
+// LifeType.EAT, x, y : xはyを食べる
+// LifeType.SAME, x, y : xとyは同じ種類
+case class Information(lifeType: LifeType, x: Int, y: Int) {
 
 }
