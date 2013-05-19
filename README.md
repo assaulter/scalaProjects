@@ -1,2 +1,3 @@
 scalaProjects
 =============
+scalaのプロジェクトを置くよ
