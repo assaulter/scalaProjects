@@ -8,20 +8,17 @@
 
 package org.assaulter.bipartitegraph
 
-// 頂点を表す数字と中身のオブジェクトを引数に取る、Nodeを表すクラス
-class Node[A] (vertexNum: Int, value: A) {
+// 頂点を表す数字を引数に取る、Nodeを表すクラス
+class Node (vertexNum: Int) {
   // 自分とつながっているノードをリストで表現
-  var child: List[Node[A]] = List()
+  var child: List[Node] = List()
+  var color: String = ""
 
-  def addChild(node: Node[A]) {
+  def addChild(node: Node) {
     child = node::child
   }
 
-  override def toString = "node value : " + value.toString
+  def getVertexNum = vertexNum
 
-  def getValue: Option[A] = value match {
-    case null | "" => None
-    case _ => Some(value)
-  }
-
+  override def toString = "node value : %d".format(vertexNum)
 }
