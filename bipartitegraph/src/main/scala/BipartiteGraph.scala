@@ -18,7 +18,7 @@ class BipartiteGraph (graph: Array[Node]) {
 
     val vertex = graph(vertexNum)
     vertex.color = color
-    // vertexに隣接するNodeをwhiteで塗る(副作用があるunk map)
+    // vertexに隣接するNodeを塗る(副作用があるunk map)
     vertex.child.map { child =>
       // 既に同じ色で塗られてたらアウト
       if (child.color == color) {
@@ -26,11 +26,34 @@ class BipartiteGraph (graph: Array[Node]) {
       }
       // 塗られてなかったら、逆の色で塗る
       if (child.color == "") {
-        child.color = reverseColor(color)
+        result = paint(child.getVertexNum, reverseColor(color))
       }
     }
 
     result
+  }
+
+  // for-yieldで書きなおす
+  def recPaint(vertexNum: Int, color: String): Boolean = {
+
+    val vertex = graph(vertexNum)
+    // for-yieldで書きなおす
+    for{
+      child <- vertex.child
+      if (child.color == color)
+    } yield child
+
+    true
+  }
+
+  // 同じ色で塗られているかどうか
+  def isSameColor(vertexChild: List[Node], color: String): Boolean = {
+    val sameColorChild = for {
+      child <- vertexChild
+      if (child.color == color)
+    } yield child
+
+    if (sameColorChild.length != 0) true else false
   }
 
   def solve(): Boolean = {
