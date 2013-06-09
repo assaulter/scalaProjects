@@ -9,6 +9,7 @@
 package org.assaulter.dijkstra
 
 //import scala.util.control.Breaks.{break, breakable}
+import scala.collection.mutable.PriorityQueue
 
 class Dijkstra(nodeArray: Array[Node]) {
 
@@ -34,8 +35,34 @@ class Dijkstra(nodeArray: Array[Node]) {
         for (edge <- doneNode.edgeList) {
           // edge.to.cost: ノードの接続先のコスト
           val cost = doneNode.cost + edge.cost
-          if (edge.to.cost == Int.MaxValue || cost < edge.to.cost ) {
+          if (edge.to.cost == Int.MaxValue || cost < edge.to.cost) {
             edge.to.cost = cost
+          }
+        }
+      }
+    }
+  }
+
+  // priorityQueueで実装
+  def dijkstraWithQueue(start: Node): Unit = {
+    start.cost = 0
+    val myOrdering = Ordering.fromLessThan[Node](_.cost > _.cost)
+    val priorityQueue = new PriorityQueue[Node]()(myOrdering)
+
+    priorityQueue.enqueue(start)
+
+    while (!priorityQueue.isEmpty) {
+      var doneNode: Node = priorityQueue.dequeue()
+
+      // ノードに接続している情報を更新する
+      for (edge <- doneNode.edgeList) {
+        // edge.to.cost: ノードの接続先のコスト
+        val cost = doneNode.cost + edge.cost
+        if (edge.to.cost == Int.MaxValue || cost < edge.to.cost) {
+          edge.to.cost = cost
+          // 存在しないときはPUSHする
+          if (!priorityQueue.exists(_ == edge.to)) {
+            priorityQueue.enqueue(edge.to)
           }
         }
       }
