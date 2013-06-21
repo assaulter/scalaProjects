@@ -11,3 +11,13 @@ project/plugins/project/
 
 # Scala-IDE specific
 .scala_dependencies
+/.idea
+/*.imi
+tmp
+dist
+/out
+/.idea_modules
+/.classpath
+/.project
+/.RUNNING_PID
+/.settings
