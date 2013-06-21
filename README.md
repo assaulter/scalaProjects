@@ -1,3 +1,0 @@
-scalaProjects
-=============
-scalaのプロジェクトを置くよ
