@@ -1,0 +1,17 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HighlightingAdvisor">
+    <option name="SUGGEST_TYPE_AWARE_HIGHLIGHTING" value="false" />
+    <option name="TYPE_AWARE_HIGHLIGHTING_ENABLED" value="true" />
+  </component>
+</project>
+
+=======
+<project version="4">
+  <component name="HighlightingAdvisor">
+    <option name="SUGGEST_TYPE_AWARE_HIGHLIGHTING" value="false"></option>
+    <option name="TYPE_AWARE_HIGHLIGHTING_ENABLED" value="true"></option>
+  </component>
+</project>
+>>>>>>> 6575452b5cff4a443a300ef67f112f6b182fd44f

@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/target/idea_output" />
+  </component>
+</project>
+
+=======
+<project version="4">
+  <component 
+  version="2" name="ProjectRootManager" languageLevel="JDK_1_7" project-jdk-name="1.7" assert-keyword="true" project-jdk-type="JavaSDK" jdk-15="true">
+    <output url="file://$PROJECT_DIR$/target/idea_output"></output>
+</component>
+</project>
+>>>>>>> 6575452b5cff4a443a300ef67f112f6b182fd44f
