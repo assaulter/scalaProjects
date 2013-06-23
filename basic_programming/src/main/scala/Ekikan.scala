@@ -16,7 +16,7 @@ package org.assaulter.basic_programming
  * @param kyori
  * @param jikan
  */
-case class Ekikan(kiten: String, shuten: String, keiyu: String, kyori: Float, jikan: Int) {
+case class Ekikan(kiten: String, shuten: String, keiyu: String, kyori: Double, jikan: Int) {
 
   def hyouji: String = {
     kiten + " - " + shuten + ", 経由駅:" + keiyu + ", 距離:" + kyori + "(km), 時間:" + jikan + "(分)"

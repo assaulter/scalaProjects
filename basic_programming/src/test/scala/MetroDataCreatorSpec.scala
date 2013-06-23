@@ -39,4 +39,19 @@ class MetroDataCreatorSpec extends Specification {
       MetroDataCreator.getEkimeiListFromJson(ekimeiJson)(1) must be_==(ekimei2)
     }
   }
+
+  "getEkimeiListAboutTextBook method" should {
+    "return Ekimei Array" in {
+      val ekimei = Ekimei("代々木公園","よよぎこうえん","yoyogikouen","千代田線")
+      MetroDataCreator.getEkimeiListAboutTextBook(1) must be_==(ekimei)
+    }
+  }
+
+  "getEkikanListAboutTextBook method" should {
+    "return Ekikan Array" in {
+      val ekikan = Ekikan("代々木公園", "明治神宮前", "千代田線", 1.2, 2)
+
+      MetroDataCreator.getEkikanListAboutTextBook(1) must be_==(ekikan)
+    }
+  }
 }

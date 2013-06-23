@@ -14,7 +14,7 @@ class EkikanSpec extends Specification {
 
   "The 'Ekikan' class, hyouji method" should {
     "return '起点駅から終点駅までの情報' about 問題8.7" in {
-      val osaki_to_shinagawa = Ekikan("大崎", "品川", "", 5.0f, 5)
+      val osaki_to_shinagawa = Ekikan("大崎", "品川", "", 5.0, 5)
       osaki_to_shinagawa.hyouji must be_!=/("大崎 - 品川, 経由駅:, 距離:5.0(km), 時間:5(分)")
     }
   }

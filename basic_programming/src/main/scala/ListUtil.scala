@@ -30,4 +30,11 @@ object ListUtil {
       case _ => list.head + concat(list.tail)
     }
   }
+
+  // 問題10.1: 昇順で並んだリストと整数を受け取り、昇順となる位置に整数を插入したリストを返す関数
+  /*def insert(list: List[Int], num: Int): List[Int] = {
+    list match {
+      case Nil
+    }
+  }*/
 }
