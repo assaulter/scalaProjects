@@ -32,9 +32,50 @@ object ListUtil {
   }
 
   // 問題10.1: 昇順で並んだリストと整数を受け取り、昇順となる位置に整数を插入したリストを返す関数
-  /*def insert(list: List[Int], num: Int): List[Int] = {
+  def insert(list: List[Int], num: Int): List[Int] = {
     list match {
-      case Nil
+      case Nil => List(num)
+      case _ =>
+        if (list.head < num) list.head::insert(list.tail, num)
+        else num::list
     }
-  }*/
+  }
+
+  // 問題10.2: 整数のリストをソートする関数
+  def ins_sort(list: List[Int]): List[Int] = {
+    list match {
+      case Nil => List()
+      case _ => insert((ins_sort(list.tail)), list.head)
+    }
+  }
+
+  // リストの最小値を返す
+  def minimum(list: List[Int]): Int = {
+    list match {
+      case Nil => Int.MaxValue
+      case _ =>
+        val minTail = minimum(list.tail)
+
+        if (list.head <= minTail) list.head
+        else minTail
+    }
+  }
+
+  // 10.4, 学生のデータを集計する
+  // A~Dがそれぞれ何人いるか集計して(Int, Int, Int, Int)で返す
+  def shukei(list: List[Gakusei]): (Int, Int, Int, Int) = {
+    list match {
+      case Nil => (0,0,0,0)
+      case _ =>
+        val shukeiTail = shukei(list.tail)
+
+        list.head.rate match {
+          case "A" => (shukeiTail._1 + 1, shukeiTail._2, shukeiTail._3, shukeiTail._4)
+          case "B" => (shukeiTail._1, shukeiTail._2 + 1, shukeiTail._3, shukeiTail._4)
+          case "C" => (shukeiTail._1, shukeiTail._2, shukeiTail._3 + 1, shukeiTail._4)
+          case "D" => (shukeiTail._1, shukeiTail._2, shukeiTail._3, shukeiTail._4 + 1)
+          case _ => shukeiTail
+        }
+    }
+  }
 }
