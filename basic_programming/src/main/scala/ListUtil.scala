@@ -13,7 +13,7 @@ object ListUtil {
   // 問題9.4: 受け取った整数リストの長さを再帰で計算して返す関数
   def getLength(list: List[Int]): Int = {
     list match {
-      case Nil => 0
+      case List() => 0
       case _ => 1 + getLength(list.tail)
     }
   }
@@ -26,7 +26,7 @@ object ListUtil {
   // 問題9.6: 文字列のリストからすべてを結合した文字列を返す関数
   def concat(list: List[String]): String = {
     list match {
-      case Nil => ""
+      case List() => ""
       case _ => list.head + concat(list.tail)
     }
   }
@@ -34,7 +34,7 @@ object ListUtil {
   // 問題10.1: 昇順で並んだリストと整数を受け取り、昇順となる位置に整数を插入したリストを返す関数
   def insert(list: List[Int], num: Int): List[Int] = {
     list match {
-      case Nil => List(num)
+      case List() => List(num)
       case _ =>
         if (list.head < num) list.head::insert(list.tail, num)
         else num::list
@@ -44,7 +44,7 @@ object ListUtil {
   // 問題10.2: 整数のリストをソートする関数
   def ins_sort(list: List[Int]): List[Int] = {
     list match {
-      case Nil => List()
+      case List() => List()
       case _ => insert((ins_sort(list.tail)), list.head)
     }
   }
@@ -52,7 +52,7 @@ object ListUtil {
   // リストの最小値を返す
   def minimum(list: List[Int]): Int = {
     list match {
-      case Nil => Int.MaxValue
+      case List() => Int.MaxValue
       case _ =>
         val minTail = minimum(list.tail)
 
@@ -65,7 +65,7 @@ object ListUtil {
   // A~Dがそれぞれ何人いるか集計して(Int, Int, Int, Int)で返す
   def shukei(list: List[Gakusei]): (Int, Int, Int, Int) = {
     list match {
-      case Nil => (0,0,0,0)
+      case List() => (0,0,0,0)
       case _ =>
         val shukeiTail = shukei(list.tail)
 
@@ -76,6 +76,26 @@ object ListUtil {
           case "D" => (shukeiTail._1, shukeiTail._2, shukeiTail._3, shukeiTail._4 + 1)
           case _ => shukeiTail
         }
+    }
+  }
+
+  // ２つのリストを結合する関数
+  def append[A](listA: List[A], listB: List[A]): List[A] = {
+    listA match {
+      case List() => listB
+      case _ => listA.head :: append(listA.tail, listB)
+    }
+  }
+
+  // ふたつの昇順にならんだいrストをマージする
+  def merge(listA: List[Int], listB: List[Int]): List[Int] = {
+    (listA, listB) match {
+      case (List(), List()) => List()
+      case (List(), _)  => listB
+      case (_, List()) => listA
+      case _ =>
+        if (listA.head < listB.head) listA.head::merge(listA.tail, listB)
+        else listB.head::merge(listA, listB.tail)
     }
   }
 }

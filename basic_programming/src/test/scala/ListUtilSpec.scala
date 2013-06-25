@@ -71,4 +71,23 @@ class ListUtilSpec extends Specification {
       ListUtil.shukei(gakuseiList) must be_==((2,2,1,1))
     }
   }
+
+  "append method" should {
+    "２つのリストを結合する" in {
+      ListUtil.append(List(), List()) must be_==(List())
+      ListUtil.append(List("a"), List("b")) must be_==(List("a", "b"))
+    }
+  }
+
+  "merge method" should {
+    "昇順に並んだリストをマージする" in {
+      val listA = List(1,2,3,4)
+      val listB = List(3,5,7)
+
+      ListUtil.merge(List(),List()) must be_==(List())
+      ListUtil.merge(listA, List()) must be_==(listA)
+      ListUtil.merge(List(), listB) must be_==(listB)
+      ListUtil.merge(listA, listB) must be_==(List(1,2,3,3,4,5,7))
+    }
+  }
 }
