@@ -54,4 +54,54 @@ class MetroDataCreatorSpec extends Specification {
       MetroDataCreator.getEkikanListAboutTextBook(1) must be_==(ekikan)
     }
   }
+
+  "makeEkiList method" should {
+    "ekimei list から eki list を作る" in {
+      val ekimeiList = MetroDataCreator.getEkimeiListAboutTextBook
+
+      MetroDataCreator.makeEkiList(ekimeiList)(0) must be_==(Eki("代々木上原", Double.MaxValue, List()))
+    }
+  }
+
+  "shokika method" should {
+    "Ekiリストと起点を受け取ると、起点だけ初期化する" in {
+      val ekimeiList = MetroDataCreator.getEkimeiListAboutTextBook
+      val ekiList = MetroDataCreator.makeEkiList(ekimeiList)
+
+      MetroDataCreator.shokika("赤坂", ekiList)(5) must be_==(Eki("赤坂", 0.0, List("赤坂")))
+    }
+  }
+
+  "insEkimei method" should {
+    "昇順にならんでいるekimeiListの正しい位置にekimeiを挿入するヘルパー関数" in {
+      val sortedEkimeiList = List(
+        Ekimei("池袋", "いけぶくろ", "ikebukuro", "丸ノ内線"),
+        Ekimei("御茶ノ水", "おちゃのみず", "ochanomizu", "丸ノ内線")
+      )
+
+      val ocha = Ekimei("御茶ノ水", "おちゃのみず", "ochanomizu", "丸ノ内線")
+      val kurakuen = Ekimei("後楽園", "こうらくえん", "korakuen", "丸ノ内線")
+
+      MetroDataCreator.insEkimei(ocha, sortedEkimeiList) must be_==(sortedEkimeiList)
+      MetroDataCreator.insEkimei(kurakuen, sortedEkimeiList)(2) must be_==(kurakuen)
+    }
+  }
+
+  "seiretu method" should {
+    "ekimeiリストを受け取ったら、それをひらがなの順に整列し、駅名の重複を除いたekimeiリストを返す関数。" in {
+      val ekimeiList = List(
+        Ekimei("後楽園", "こうらくえん", "korakuen", "丸ノ内線"),
+        Ekimei("池袋", "いけぶくろ", "ikebukuro", "丸ノ内線"),
+        Ekimei("御茶ノ水", "おちゃのみず", "ochanomizu", "丸ノ内線")
+      )
+
+      val sortedEkimeiList = List(
+        Ekimei("池袋", "いけぶくろ", "ikebukuro", "丸ノ内線"),
+        Ekimei("御茶ノ水", "おちゃのみず", "ochanomizu", "丸ノ内線"),
+        Ekimei("後楽園", "こうらくえん", "korakuen", "丸ノ内線")
+      )
+
+      MetroDataCreator.seiretu(ekimeiList) must be_==(sortedEkimeiList)
+    }
+  }
 }

@@ -23,7 +23,7 @@ object MetroDataCreator {
   }
 
   // 問題9.9 メトロネットワークのすべての駅名のリストを返す
-  def getEkimeiListAboutTextBook: Array[Ekimei] = {
+  def getEkimeiListAboutTextBook: List[Ekimei] = {
     val gson: Gson = new Gson()
 
     val data =
@@ -200,10 +200,10 @@ object MetroDataCreator {
         ]
       """
 
-    gson.fromJson(data, classOf[Array[Ekimei]])
+    gson.fromJson(data, classOf[Array[Ekimei]]).toList
   }
 
-  def getEkikanListAboutTextBook: Array[Ekikan] = {
+  def getEkikanListAboutTextBook: List[Ekikan] = {
     val data = """
     [
     {kiten="代々木上原", shuten="代々木公園", keiyu="千代田線", kyori=1.0, jikan=2},
@@ -370,6 +370,42 @@ object MetroDataCreator {
     """
 
     val gson: Gson = new Gson()
-    gson.fromJson(data, classOf[Array[Ekikan]])
+    gson.fromJson(data, classOf[Array[Ekikan]]).toList
+  }
+
+  // 問題12.2: ekimei list から eki list を作る
+  def makeEkiList(list: List[Ekimei]): List[Eki] = list match {
+    case Nil => List()
+    case _ =>
+      val ekimei = list.head
+
+      Eki(ekimei.kanji, Double.MaxValue, List())::makeEkiList(list.tail)
+  }
+
+  // 問題12.3: Ekiリストと起点を受け取ると、起点だけ初期化する
+  def shokika(kiten: String, ekiList: List[Eki]): List[Eki] = ekiList match {
+    case Nil => List()
+    case _ =>
+      val eki = ekiList.head
+      eki.namae match {
+        case kiten => Eki(eki.namae, 0.0, List(eki.namae))::shokika(kiten, ekiList.tail)
+        case _ => ekiList.head::shokika(kiten, ekiList.tail)
+      }
+  }
+
+  // 問題12.4: ekimeiリストを受け取ったら、それをひらがなの順に整列し、駅名の重複を除いたekimeiリストを返す関数。
+  def seiretu(list: List[Ekimei]): List[Ekimei] = list match {
+    case Nil => List()
+    case _ => insEkimei(list.head, (seiretu(list.tail)))
+  }
+
+  // 昇順にならんでいるekimeiListの正しい位置にekimeiを挿入するヘルパー関数
+  def insEkimei(ekimei: Ekimei, ekimeiList: List[Ekimei]): List[Ekimei] = ekimeiList match {
+    case Nil => List(ekimei)
+    case _ =>
+      val ekimeiHead = ekimeiList.head
+      if (ekimeiHead.kana == ekimei.kana) insEkimei(ekimei, ekimeiList.tail)
+      else if (ekimeiHead.kana < ekimei.kana) ekimeiList.head::insEkimei(ekimei, ekimeiList.tail)
+      else ekimei::insEkimei(ekimei, ekimeiList.tail)
   }
 }
