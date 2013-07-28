@@ -104,4 +104,10 @@ class MetroDataCreatorSpec extends Specification {
       MetroDataCreator.seiretu(ekimeiList) must be_==(sortedEkimeiList)
     }
   }
+
+  "koushin1 method" should {
+    "未確定の駅を必要に応じて更新した駅を返す" in {
+
+    }
+  }
 }

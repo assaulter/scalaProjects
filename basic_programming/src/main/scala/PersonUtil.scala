@@ -25,4 +25,9 @@ object PersonUtil {
   def sixtyfive(list: List[Person]): List[String] = {
     list.filter( p => p.weight == 65).map( p => p.name)
   }
+
+  // 問題13.2: personのリストから、名前だけのリストを返す
+  def personName(list: List[Person]): List[String] = {
+    list.map(person => person.name)
+  }
 }

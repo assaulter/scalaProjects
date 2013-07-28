@@ -98,4 +98,27 @@ object ListUtil {
         else listB.head::merge(listA, listB.tail)
     }
   }
+
+  // 14.1 : 例題
+  def filterPositive(list: List[Int]): List[Int] = {
+    list match {
+      case List() => list
+      case _ =>
+        if (list.head > 0) list.head :: filterPositive(list.tail)
+        else filterPositive(list.tail)
+    }
+  }
+
+  // 14.1 : 自作filter関数
+  // 条件 matcher にあうものだけ抽出する関数
+  def myFilter[A](list: List[A], matcher: A => Boolean): List[A] = {
+    list match {
+      case List() => list
+      case _ =>
+        if (matcher(list.head)) list.head :: myFilter(list.tail, matcher)
+        else myFilter(list.tail, matcher)
+    }
+  }
+
+  // 問題14.1 : 9.5のevenをfilterを使って書きなおす
 }

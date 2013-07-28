@@ -90,4 +90,21 @@ class ListUtilSpec extends Specification {
       ListUtil.merge(listA, listB) must be_==(List(1,2,3,3,4,5,7))
     }
   }
+
+  "filterPositive method" should {
+    "リストから、正の要素のみを取り出す" in {
+      val listA = List(-1,1,2,-2,3)
+
+      ListUtil.filterPositive(listA) must be_==(List(1,2,3))
+    }
+  }
+
+  "myFilter method" should {
+    "listからmatcherの条件に引っかかるやつのみの要素を取り出す" in {
+      val listA = List(-1,1,2,-2,3)
+      val matcher = (x: Int) => x > 0
+
+      ListUtil.myFilter(listA, matcher) must be_==(List(1,2,3))
+    }
+  }
 }

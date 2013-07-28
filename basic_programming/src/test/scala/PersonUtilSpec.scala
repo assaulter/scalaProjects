@@ -38,4 +38,17 @@ class PersonUtilSpec extends Specification {
       PersonUtil.sixtyfive(personList)(1) must be_!=/("nameD")
     }
   }
+
+  "personName method" should {
+    "personのリストから、名前だけのリストを返す" in {
+      val personList = List(
+        Person("nameA", 170, 60, "2/2", "A"),
+        Person("nameB", 170, 65, "2/2", "B"),
+        Person("nameC", 170, 60, "2/2", "A"),
+        Person("nameD", 170, 65, "2/2", "A")
+      )
+
+      PersonUtil.personName(personList) must be_==(List("nameA", "nameB", "nameC", "nameD"))
+    }
+  }
 }
