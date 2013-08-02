@@ -107,4 +107,43 @@ class ListUtilSpec extends Specification {
       ListUtil.myFilter(listA, matcher) must be_==(List(1,2,3))
     }
   }
+
+  "filterEven method" should  {
+    "even関数をfilterを使って書きなおした" in {
+      val list = List(1,2,3,4)
+      ListUtil.filterEven(list) must be_==(List(2,4))
+    }
+  }
+
+  "filterCountA method" should {
+    "学生リストのうち、成績がAの人数を返す" in {
+      val list = List(
+        Gakusei("name1", 80, "A"),
+        Gakusei("name2", 80, "A"),
+        Gakusei("name3", 60, "B"),
+        Gakusei("name4", 50, "B")
+      )
+
+      ListUtil.filterCountA(list) must be_==(2)
+    }
+  }
+
+  "powSubOne method" should {
+    "整数の二乗から１を引いた数を返す" in {
+      ListUtil.powSubOne(3) must be_==(8)
+    }
+  }
+
+  "concatByOneLine method" should {
+    "return 文字列のリストから、連結した一つの文字列をかえす" in {
+      val list = List("a", "b", "c")
+      ListUtil.concatByOneLine(list) must be_!=/("abc")
+    }
+  }
+
+  "enumerate method" should {
+    "n to 1のリストを返す" in {
+      ListUtil.enumerate(5) must be_==(List(5,4,3,2,1))
+    }
+  }
 }

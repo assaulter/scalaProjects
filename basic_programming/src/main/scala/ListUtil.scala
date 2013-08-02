@@ -121,4 +121,31 @@ object ListUtil {
   }
 
   // 問題14.1 : 9.5のevenをfilterを使って書きなおす
+  // even : 整数のリストを受け取ったら、偶数の要素のみのリストを返す関数
+  def filterEven(list: List[Int]): List[Int] = {
+    list.filter(n => n%2 == 0)
+  }
+
+  // 問題14.2 : 9.6節のcountAをfilterを使って書きなおす
+  def filterCountA(list: List[Gakusei]): Int = {
+    list.filter(gakusei => gakusei.rate == "A").length
+  }
+
+  // 問題14.8 : 整数の２乗から１ひいた数を返す関数
+  val powSubOne:Int => Int = {x => x * x - 1}
+
+  // 問題14.9 : 問題 8.3のperson型の配列から、名前のフィールドを取り出す関数
+  // 誤字っぽいので、person_t型の配列から名前を取り出す関数を定義
+  val getNameFromPerson:Person => String = {p => p.name}
+
+  // 問題14.14: 文字列のリストからすべてを結合した文字列を返す関数を一行で書く
+  def concatByOneLine(list: List[String]): String = {
+    list.reduceLeft(_ + _)
+  }
+
+  // nから1までのリストを作る
+  val enumerate:Int => List[Int] = {x => (1 to x).reverse.toList}
+
+  // 約数を求める関数
+
 }

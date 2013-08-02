@@ -408,4 +408,17 @@ object MetroDataCreator {
       else if (ekimeiHead.kana < ekimei.kana) ekimeiList.head::insEkimei(ekimei, ekimeiList.tail)
       else ekimei::insEkimei(ekimei, ekimeiList.tail)
   }
+
+  // makeEkiListを、mapを使って書きなおす
+  def makeEkiListByMap(list :List[Ekimei]): List[Eki] = {
+    list.map(ekimei => Eki(ekimei.kanji, Double.MaxValue, List()))
+  }
+
+  // shokikaをmapを使って書きなおす
+  def shokikaByMap(kiten: String, ekiList: List[Eki]): List[Eki] = {
+    ekiList.map(eki => eki.namae match {
+      case kiten => Eki(eki.namae, 0.0, List(eki.namae))
+      case _ => eki
+    })
+  }
 }

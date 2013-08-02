@@ -110,4 +110,21 @@ class MetroDataCreatorSpec extends Specification {
 
     }
   }
+
+  "makeEkiListByMap method" should {
+    "ekimei list から eki list を作る" in {
+      val ekimeiList = MetroDataCreator.getEkimeiListAboutTextBook
+
+      MetroDataCreator.makeEkiListByMap(ekimeiList)(0) must be_==(Eki("代々木上原", Double.MaxValue, List()))
+    }
+  }
+
+  "shokikaByMap method" should {
+    "Ekiリストと起点を受け取ると、起点だけ初期化する" in {
+      val ekimeiList = MetroDataCreator.getEkimeiListAboutTextBook
+      val ekiList = MetroDataCreator.makeEkiList(ekimeiList)
+
+      MetroDataCreator.shokikaByMap("赤坂", ekiList)(5) must be_==(Eki("赤坂", 0.0, List("赤坂")))
+    }
+  }
 }
