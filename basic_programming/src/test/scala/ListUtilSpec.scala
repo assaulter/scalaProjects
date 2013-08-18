@@ -146,4 +146,23 @@ class ListUtilSpec extends Specification {
       ListUtil.enumerate(5) must be_==(List(5,4,3,2,1))
     }
   }
+
+  "quickSort method" should {
+    "quick sort を実装" in {
+      ListUtil.quickSort(List()) must be_==(List())
+      ListUtil.quickSort(List(5,7,3,4,6)) must be_==(List(3,4,5,6,7))
+    }
+  }
+
+  "takeLess method" should {
+    "listから、nより小さい要素のみを返す" in {
+      ListUtil.takeLess(4,List(3,5,2,1,7)) must be_==(List(3,2,1))
+    }
+  }
+
+  "takeGreater method" should {
+    "listから、nより大きい要素のみを返す" in {
+      ListUtil.takeGreater(4, List(3,5,7,6,4)) must be_==(List(5,7,6))
+    }
+  }
 }

@@ -26,6 +26,8 @@
     <file path="/NumUtil.scala" changelist="747f9e91-8a9f-47e3-862b-a7c8efe677e6" time="1372245217001" ignored="false" />
     <file path="/NumUtilSpec.scala" changelist="747f9e91-8a9f-47e3-862b-a7c8efe677e6" time="1372245298248" ignored="false" />
     <file path="/Eki.scala" changelist="747f9e91-8a9f-47e3-862b-a7c8efe677e6" time="1372245798342" ignored="false" />
+    <file path="/EuclidSpec.scala" changelist="747f9e91-8a9f-47e3-862b-a7c8efe677e6" time="1376813931459" ignored="false" />
+    <file path="/Euclid.scala" changelist="747f9e91-8a9f-47e3-862b-a7c8efe677e6" time="1376813945342" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +90,33 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="ListUtil.scala" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="ListUtil.scala" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/scala/ListUtil.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="149" column="0" selection-start="3950" selection-end="3950" vertical-scroll-proportion="0.9414226">
+                <state line="173" column="3" selection-start="4524" selection-end="4524" vertical-scroll-proportion="0.0">
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EuclidSpec.scala" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/scala/EuclidSpec.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="15" column="34" selection-start="330" selection-end="330" vertical-scroll-proportion="0.45">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Euclid.scala" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/Euclid.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="7" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -122,7 +146,7 @@
           <file leaf-file-name="ListUtilSpec.scala" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/scala/ListUtilSpec.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="145" column="53" selection-start="3601" selection-end="3601" vertical-scroll-proportion="0.86455333">
+                <state line="8" column="39" selection-start="159" selection-end="198" vertical-scroll-proportion="0.06465517">
                   <folding />
                 </state>
               </provider>
@@ -158,8 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/test/scala/MetroDataCreator.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Ekikan.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/EkikanSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Ekimei.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Gakusei.scala" />
@@ -172,15 +194,17 @@
         <option value="$PROJECT_DIR$/src/test/scala/PersonUtilSpec.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/MetroDataCreatorSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/MetroDataCreator.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/ListUtilSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/ListUtil.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ListUtilSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/EuclidSpec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Euclid.scala" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="878" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -225,6 +249,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -289,8 +315,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,32 +329,11 @@
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Specs2.ListUtilSpec">
-    <configuration default="false" name="org.assaulter.basic_programming.MertoDataUtilSpec::getEkikanKyori method" type="Specs2RunConfiguration" factoryName="Specs2" temporary="true">
-      <module name="basic_programming" />
-      <setting name="path" value="org.assaulter.basic_programming.MertoDataUtilSpec" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value=" -Dspecs2.ex=&quot;getEkikanKyori method&quot;" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="getEkikanKyori method" />
-      <setting name="testKind" value="Test name" />
-      <setting name="showProgressMessages" value="true" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Specs2.EuclidSpec">
     <configuration default="false" name="NumUtilSpec" type="Specs2RunConfiguration" factoryName="Specs2" temporary="true">
       <module name="basic_programming" />
       <setting name="path" value="org.assaulter.basic_programming.NumUtilSpec" />
@@ -391,18 +394,25 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="EuclidSpec" type="Specs2RunConfiguration" factoryName="Specs2" temporary="true">
+      <module name="basic_programming" />
+      <setting name="path" value="org.assaulter.basic_programming.EuclidSpec" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
       <method />
     </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
@@ -418,17 +428,12 @@
       <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -456,6 +461,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -493,19 +511,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Specs2.org.assaulter.basic_programming.MertoDataUtilSpec::getEkikanKyori method" />
-      <item index="1" class="java.lang.String" itemvalue="Specs2.NumUtilSpec" />
-      <item index="2" class="java.lang.String" itemvalue="Specs2.PersonUtilSpec" />
-      <item index="3" class="java.lang.String" itemvalue="Specs2.ListUtilSpec" />
-      <item index="4" class="java.lang.String" itemvalue="Specs2.MetroDataCreatorSpec" />
+      <item index="0" class="java.lang.String" itemvalue="Specs2.NumUtilSpec" />
+      <item index="1" class="java.lang.String" itemvalue="Specs2.PersonUtilSpec" />
+      <item index="2" class="java.lang.String" itemvalue="Specs2.ListUtilSpec" />
+      <item index="3" class="java.lang.String" itemvalue="Specs2.MetroDataCreatorSpec" />
+      <item index="4" class="java.lang.String" itemvalue="Specs2.EuclidSpec" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Specs2.ListUtilSpec" />
-        <item index="1" class="java.lang.String" itemvalue="Specs2.MetroDataCreatorSpec" />
-        <item index="2" class="java.lang.String" itemvalue="Specs2.PersonUtilSpec" />
-        <item index="3" class="java.lang.String" itemvalue="Specs2.MetroDataCreatorSpec" />
-        <item index="4" class="java.lang.String" itemvalue="Specs2.NumUtilSpec" />
+        <item index="0" class="java.lang.String" itemvalue="Specs2.EuclidSpec" />
+        <item index="1" class="java.lang.String" itemvalue="Specs2.ListUtilSpec" />
+        <item index="2" class="java.lang.String" itemvalue="Specs2.MetroDataCreatorSpec" />
+        <item index="3" class="java.lang.String" itemvalue="Specs2.PersonUtilSpec" />
+        <item index="4" class="java.lang.String" itemvalue="Specs2.MetroDataCreatorSpec" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -560,7 +578,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="878" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -572,16 +590,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32625994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13916786" sideWeight="0.67268044" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30025774" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13916786" sideWeight="0.7002652" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29973474" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3273196" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -651,16 +669,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/scala/NumUtilSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="39" selection-start="160" selection-end="199" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/AppSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="29" selection-start="254" selection-end="254" vertical-scroll-proportion="0.22865854" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Ekimei.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="39" selection-start="198" selection-end="198" vertical-scroll-proportion="0.04573171" />
@@ -729,17 +737,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/ListUtilSpec.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ListUtil.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="53" selection-start="3601" selection-end="3601" vertical-scroll-proportion="0.86455333">
+        <state line="173" column="3" selection-start="4524" selection-end="4524" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ListUtil.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ListUtilSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="0" selection-start="3950" selection-end="3950" vertical-scroll-proportion="0.9414226">
+        <state line="8" column="39" selection-start="159" selection-end="198" vertical-scroll-proportion="0.06465517">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Euclid.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="7" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/EuclidSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="34" selection-start="330" selection-end="330" vertical-scroll-proportion="0.45">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

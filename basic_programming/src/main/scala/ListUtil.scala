@@ -148,4 +148,28 @@ object ListUtil {
 
   // 約数を求める関数
 
+
+  // quick sort を実装する
+  def quickSort(list: List[Int]): List[Int] = {
+    list match {
+      case List() => List()
+      case _ =>
+        val listTail = list.tail
+        val listHead = list.head
+
+        quickSort(takeLess(listHead, listTail)) :::
+          List(listHead) :::
+          quickSort(takeGreater(listHead, listTail))
+    }
+  }
+
+  // listから、nより小さい要素のみを返す
+  def takeLess(n: Int, list: List[Int]): List[Int] = {
+    list.filter(t => t < n)
+  }
+
+  // listから、nより大きい要素のみを返す
+  def takeGreater(n: Int, list: List[Int]): List[Int] = {
+    list.filter(t => t > n)
+  }
 }
